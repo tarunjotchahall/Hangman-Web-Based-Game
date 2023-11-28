@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#game {
+    text-align: center;
+}
+
+#hangman {
+    margin-bottom: 20px;
+    /* Styles for hangman drawing */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#keyboard button {
+    margin: 5px;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#hangman {
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 250px;
+}
+
+.part {
+    display: none;
+    position: absolute;
+    z-index: 10; 
+}
+
+
+.head {
+    top: 10px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    transform: translateX(-50%);
+}
+
+.body {
+    top: 30px;
+    left: 50%;
+    width: 10px;
+    height: 50px;
+    background-color: black;
+    transform: translateX(-50%);
+}
+
+.arm {
+    width: 50px;
+    height: 10px;
+    background-color: black;
+    top: 40px;
+}
+
+.left-arm, .right-arm, .left-leg, .right-leg {
+    width: 40px; 
+    height: 5px; 
+    background-color: black;
+    position: absolute; 
+    display: block; 
+}
+
+.left-arm {
+    top: 60px; 
+    left: 50%;
+    transform: translateX(-70%) rotate(-45deg); 
+    transform-origin: top left; 
+}
+
+.right-arm {
+    top: 60px; 
+    left: 50%;
+    transform: translateX(-30%) rotate(45deg); 
+    transform-origin: top right; 
+}
+
+.left-leg {
+    bottom: 140px;
+    left: 45%; 
+    transform: translateX(-60%) rotate(-45deg); 
+    transform-origin: top left; 
+}
+
+.right-leg {
+    bottom: 140px;
+    left: 55%; 
+    transform: translateX(-40%) rotate(45deg); 
+    transform-origin: top right; 
+}
+
+#guesses-info {
+    position: fixed; /* Fixed position relative to the viewport */
+    top: 10px;      /* 10px from the top */
+    right: 10px;    /* 10px from the right */
+    z-index: 1000;  /* Ensure it's above other elements */
+}
+
+#guesses-used,
+#guesses-left {
+    font-size: 18px;
+    color: #333;
+    background-color: #e0e0e0;
+    margin: 0 0 10px; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block; 
+}
+
+
+#guesses-used, #guesses-left {
+    transition: transform 0.2s ease-in-out;
+}
+
+#guesses-used.update-animation,
+#guesses-left.update-animation {
+    transform: scale(1.1);
+}
+
+
+
